@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>verificador de votação</title>
+    <style>
+        table {
+        border-collapse: collapse;
+        width: 400px;
+        margin: auto
+        
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        p#res {
+            background-color: lightgreen;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificação de obrigatoriedade de votação no brasil.</h1>
+    <h2>Regras de Votação</h2>
+
+    <table>
+        <tr>
+            <th>Faixa Etária</th>
+            <th>Situação do Voto</th>
+        </tr>
+        <tr>
+            <td>Menor de 16 anos</td>
+            <td>Não vota</td>
+        </tr>
+        <tr>
+            <td>Entre 16 e 18 anos</td>
+            <td>Voto opcional</td>
+        </tr>
+        <tr>
+            <td>Maior de 18 e menor de 65 anos</td>
+            <td>Voto obrigatório</td>
+        </tr>
+        <tr>
+            <td>Maior de 65 anos</td>
+            <td>Voto opcional</td>
+        </tr>
+    </table>
+    <h2>digite sua idade abaixo e veja se o voto é obrigatório para você:</h2>
+    <label for="idade">idade: </label>
+    <input type="number" name="idade" id="idade">
+    <input type="button" value="verificar" onclick="verificador()">
+    <p id="res">
+
+    </p>
+    <script>
+        var edad = document.getElementById('idade')
+        var resposta = document.querySelector('p#res')
+        function verificador() {
+            if (edad.value < 16) {
+                resposta.innerHTML = 'não vota'
+                resposta.style.background = 'red'
+            }else if (edad.value < 18 || edad.value > 65) {
+                resposta.innerHTML = 'voto opcional'
+                resposta.style.background = 'yellow'
+            }else {
+                resposta.innerHTML = 'voto obrigatório'
+                resposta.style.background = 'green'
+                resposta.style.color = 'white'
+            }
+        }
+    </script>
+</body>
+</html>

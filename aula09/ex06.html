@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao Dom</title>
+    <style>
+        body {
+            background: lightblue;
+            color: white;
+            font: normal 20pt arial;
+        }
+
+        div.msg {
+            background-color: black;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos do DOM</h1>
+    <p>aqui vai o resultado</p>
+    <p>aprendendo a usar <strong>DOM</strong></p>
+    <div class="msg" name="msg" id="msg">clique em mim</div>
+    <script>
+        //window.document.write('olá mundo') escreve 'olá mundo' na tela
+        //window.document.write(window.document.URL) escreve a url na tela
+        //window.document.write(document.charset) escreve o charset na tela
+        //var corpo = window.document.body
+        //var p1 = window.document.getElementsByTagName('p')[1] //atribui à variável o conteúdo do parágrafo sem os filhos
+        //window.document.write(p1.innerText) //escreve na tela o conteúdo do p1
+        //p1.style.color = 'blue'
+        //corpo.style.backgroundColor = 'grey'
+        //document.writeln(p1.innerHTML) // escreve o conteúdo do elemento na tela com os filhos: strong e etc
+        //var d = document.getElementById('msg')
+        //d.style.background = 'green'
+        //window.document.getElementById('msg').innerText = 'olá'
+
+        //var d = window.document.getElementsByName('msg')[0]// se o comando está no plural, é necessário indicar qual elemento o JS deve buscar
+        //d.innerText = 'estou aguardando'
+
+        //var d = window.document.getElementsByClassName('msg')[0]
+        //d.innerText = 'até a pé nós iremos'
+
+        var d = document.querySelector('div.msg')
+        d.style.background = 'red'
+        d.style.color = 'yellow'
+    </script>
+</body>
+</html>

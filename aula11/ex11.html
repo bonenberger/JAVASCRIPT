@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Velocidade</title>
+</head>
+<body>
+    <h1>Verificador de Velocidade</h1>
+    <label for="vel">Velocidade: </label>
+    <input type="number" name="vel" id="vel">
+    <input type="button" value="verificar" onclick="verificador()">
+    <p id="res"></p>
+    <script>
+        function verificador() {
+            var velocidade = document.getElementById('vel')
+            var multado = document.getElementById('res')
+            var veloc = Number(velocidade.value)
+            
+            if (veloc > 60) {
+            res.innerHTML = `<p>sua velocidade é de ${veloc}km/h e você foi multado!</p>`
+            }
+            res.innerHTML += '<p>use sempre o cinto de segurança</p>'
+        }
+        
+    </script>
+</body>
+</html>

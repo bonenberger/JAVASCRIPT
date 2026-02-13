@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eventos DOM</title>
+    <style>
+        main {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div#area {
+            font: normal 15pt arial;
+            background: lightgreen;
+            color: black;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!--events list do mdn-->
+    <main>
+        <div id="area">
+            interaja
+        </div>
+    </main>
+    <script>
+        var a = document.getElementById('area')
+        a.addEventListener('click', clicar) //coloca o onclick no JS
+        a.addEventListener('mouseenter', entrar) //coloca o mouseenter no JS
+        a.addEventListener('mouseout', sair) //coloca o mouseout no JS
+
+        function clicar() {
+            a.innerText = 'clicou'
+            a.style.background = 'red'
+        }
+        function entrar() {
+            a.innerText = 'entrou'
+            a.style.background = 'orange'
+        }
+        function sair() {
+            a.innerText = 'saiu'
+            a.style.background = 'blue'
+        }
+    </script>
+</body>
+</html>

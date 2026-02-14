@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desafio 01</title>
+</head>
+<body>
+    <section id="parouimpar">
+        <p>
+            digite um número:
+            <input type="number" name="num1" id="num1">
+        </p>
+        <p>
+            <input type="button" value="enviar" onclick="somar()">
+        </p>
+        <p id="res">resultado</p>
+    </section>
+    <section id="idade">
+        <p>
+            qual a sua idade? 
+            <input type="number" name="edad" id="edad">
+            <input type="button" value="verificar" onclick="maiorOuMenor()">
+        </p>
+        <p id="res1"></p>
+    </section>
+    <section id="calculadora">
+        <p>número 1: <input type="number" name="n1" id="n1"></p>
+        <p>operação: <select name="seleção" id="sel">
+            <option value="soma">+</option>
+            <option value="subtração">-</option>
+            <option value="multiplicação">*</option>
+            <option value="divisão">/</option>
+        </select></p>
+        <p>número 2: <input type="number" name="n2" id="n2"></p>
+        <p><input type="button" value="resultado" onclick="calcular()"></p>
+        <p id="res3"></p>
+    </section>
+    <script>
+        function calcular(){
+            var campo1 = document.getElementById('n1')
+            var campo2 = document.getElementById('n2')
+            
+            var oper = document.getElementById('sel').value
+            var res3 = document.getElementById('res3')
+            
+            if (campo1.value == '' || campo2.value == '') {
+                res3.innerHTML = 'digite os dois valores'
+                return
+            }
+            var num1 = Number(campo1.value)
+            var num2 = Number(campo2.value)
+            if (oper == "soma") {
+                res3.innerHTML = num1 + num2
+            }else if (oper == 'subtração') {
+                res3.innerHTML = num1 - num2
+            }else if (oper == 'multiplicação') {
+                res3.innerHTML = num1 * num2
+            }else {
+                if (num2 === 0) {
+                    res3.innerHTML = `impossível dividir por 0`
+                }else {
+                    res3.innerHTML = num1 / num2
+                }                
+            }
+                        
+        }
+
+        function somar() {
+            var num1 = Number(document.getElementById('num1').value)
+            var res = document.getElementById('res')
+            if (num1 === 0 && document.getElementById('num1').value === "") {
+                res.innerHTML = 'digite um número válido'
+                return
+            }
+            if (num1 % 2 == 0){res.innerHTML = `o número ${num1} é par!`}
+            if (num1 % 2 == 1){res.innerHTML = `o número ${num1} é impar!`}
+        }
+
+        function maiorOuMenor() {
+            var edad = Number(document.getElementById('edad').value)
+            var res1 = document.getElementById('res1')
+            if (edad < 0) {
+                res1.innerHTML = 'digite um número válido'
+            }else if (edad >= 0 && edad < 12) {
+                res1.innerHTML = `você tem ${edad} e é uma criança`
+            }else if (edad < 18) {
+                res1.innerHTML = `você tem ${edad} e é um adolescente`
+            }else if (edad < 65) {
+                res1.innerHTML = `você tem ${edad} e é um adulto`
+            }else {
+                res1.innerHTML = `você tem ${edad} e é um idoso`
+            }            
+        }
+    </script>
+</body>
+<!--
+🔹 NÍVEL 2 – Condições Compostas
+🟡 Exercício 4 – Sistema de Notas
+
+Usuário digita uma nota de 0 a 10:
+
+Nota < 5 → Reprovado
+
+Nota 5 a 6.9 → Recuperação
+
+Nota ≥ 7 → Aprovado
+
+🟡 Exercício 5 – Simulador de Multa
+
+Usuário digita velocidade:
+
+Até 60 → Dentro do limite
+
+61 a 80 → Multa leve
+
+Acima de 80 → Multa grave
+
+🟡 Exercício 6 – Verificador de Ano Bissexto
+
+Usuário digita um ano e você verifica se é bissexto.
+
+Regra:
+
+Divisível por 4
+
+Mas não por 100
+
+Exceto se for divisível por 400
+
+🔹 NÍVEL 3 – Lógica um pouco mais desafiadora
+🟠 Exercício 7 – Pedra, Papel ou Tesoura
+
+Usuário escolhe uma opção.
+Computador escolhe aleatoriamente.
+Mostrar quem venceu.
+
+Dica:
+
+Math.floor(Math.random() * 3)
+
+🟠 Exercício 8 – Simulador de IMC
+
+Usuário digita:
+
+Peso
+
+Altura
+
+Calcular IMC:
+
+imc = peso / (altura * altura)
+
+
+Classificar:
+
+< 18.5 → Abaixo do peso
+
+18.5 – 24.9 → Normal
+
+25 – 29.9 → Sobrepeso
+
+≥ 30 → Obesidade
+
+🟠 Exercício 9 – Caixa Eletrônico
+
+Usuário digita valor para saque.
+
+Mostrar quantas notas de:
+
+100
+
+50
+
+20
+
+10
+
+Dica: usar divisão inteira e resto %.
+
+🔹 DESAFIO FINAL 🔥
+🔴 Exercício 10 – Sistema de Cadastro
+
+Criar:
+
+Nome
+
+Idade
+
+Sexo
+
+Botão cadastrar
+
+Mostrar:
+
+Nome: Rafael
+Idade: 45
+Classificação: Adulto
+
+
+Classificação:
+
+Criança
+
+Adolescente
+
+Adulto
+
+Idoso
+
+
+
+-->
+</html>
